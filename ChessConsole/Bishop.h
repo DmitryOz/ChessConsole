@@ -36,5 +36,7 @@ class Bishop : public Figure
 		Bitboard getFreeMoves(CKey field);
 		Bitboard getMoves(CKey field, Bitboard enemy, Bitboard friends);
 
+		Bishop();
+
 
 };

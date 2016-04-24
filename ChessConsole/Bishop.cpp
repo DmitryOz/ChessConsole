@@ -1,8 +1,40 @@
 #include "Bishop.h"
 
+Bishop::Bishop()
+{
+	generateFreeMoves();
+}
 void Bishop::generateFreeMoves()
 {
+	const int lim = 8;
+	for (int v = 0; v < lim; v++)
+	{
+		for (int h = 0; h < lim; h++)
+		{
+			CKey key = convertToCKeyFromLines(v, h);
+			Bitboard result9 = 0;
+			Bitboard result7 = 0;
+			Bitboard result3 = 0;
+			Bitboard result1 = 0;
 
+			for (int i = v + 1, j = h + 1; i < lim && j < lim; i++, j++)
+				result9 |= convertToBitboardFromLines(i, j);
+
+			for (int i = v - 1, j = h - 1; i >= 0 && j>=0 ; i--, j--)
+				result1 |= convertToBitboardFromLines(i, j);
+
+			for (int i = v - 1, j = h + 1; i >= 0 && j < lim; i--, j++)
+				result3 |= convertToBitboardFromLines(i, j);
+
+			for (int i = v + 1, j = h - 1; i < lim && j >= 0; i++, j--)
+				result7 |= convertToBitboardFromLines(i, j);
+
+			_bishop9_free_moves[key] = result9;
+			_bishop7_free_moves[key] = result7;
+			_bishop3_free_moves[key] = result3;
+			_bishop1_free_moves[key] = result1;
+		}
+	}
 }
 
 inline Bitboard Bishop::getFreeMoves1(CKey field)

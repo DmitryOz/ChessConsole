@@ -1,5 +1,13 @@
 #include "Figure.h"
 
+Bitboard Figure::convertToBitboardFromLines(int v, int h)
+{
+	return ((Bitboard)1 << ((v << 3) | h));
+}
+CKey	 Figure::convertToCKeyFromLines(int v, int h)
+{
+	return ((v << 3) | h);
+}
 CKey	 Figure::convertFromLines(HLine v, VLine h)
 {
 	return ((v << 3) | h);
