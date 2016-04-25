@@ -71,7 +71,6 @@ Bitboard Bishop::cutRangeMoves(Bitboard moves, Bitboard enemy, Bitboard friends,
 
 	return result;
 }
-
 Bitboard Bishop::getMoves1(CKey field, Bitboard enemy, Bitboard friends)
 {
 	Bitboard free_moves = getFreeMoves1(field);

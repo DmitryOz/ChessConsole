@@ -18,24 +18,5 @@ class Figure
 
 		Bitboard convertFromCKey(CKey key);
 
-		/*
-		Bitboard cutRangeMoves(Bitboard moves, Bitboard enemy, Bitboard friends,
-			Bitboard(Figure:: * pMovesOppositeDirection)(CKey), CKey(Figure:: * pFirstBlocker)(Bitboard))
-		{
-			Bitboard result = 0;
 
-			Bitboard blockers = moves & (enemy | friends);
-			if (blockers)
-			{
-				CKey key = (this->*pFirstBlocker)(blockers);
-				Bitboard move_from_blocked = (this->*pMovesOppositeDirection)(key);
-				result = (moves & move_from_blocked);
-				result |= (convertFromCKey(key) & enemy);
-			}
-			else
-				result = moves;
-
-			return result;
-		}
-		*/
 };
