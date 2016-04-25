@@ -20,6 +20,7 @@ Bitboard Rook::getFreeMoves6(CKey field)
 {
 	return _rook6_free_moves[field];
 }
+
 Bitboard Rook::cutRangeMoves(Bitboard moves, Bitboard enemy, Bitboard friends,
 	Bitboard(Rook:: * pMovesOppositeDirection)(CKey), CKey(Figure:: * pFirstBlocker)(Bitboard))
 {

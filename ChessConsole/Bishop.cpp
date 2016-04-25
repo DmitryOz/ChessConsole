@@ -37,19 +37,19 @@ void Bishop::generateFreeMoves()
 	}
 }
 
-inline Bitboard Bishop::getFreeMoves1(CKey field)
+Bitboard Bishop::getFreeMoves1(CKey field)
 {
 	return _bishop1_free_moves[field];
 }
-inline Bitboard Bishop::getFreeMoves3(CKey field)
+Bitboard Bishop::getFreeMoves3(CKey field)
 {
 	return _bishop3_free_moves[field];
 }
-inline Bitboard Bishop::getFreeMoves7(CKey field)
+Bitboard Bishop::getFreeMoves7(CKey field)
 {
 	return _bishop7_free_moves[field];
 }
-inline Bitboard Bishop::getFreeMoves9(CKey field)
+Bitboard Bishop::getFreeMoves9(CKey field)
 {
 	return _bishop9_free_moves[field];
 }
@@ -80,12 +80,12 @@ Bitboard Bishop::getMoves1(CKey field, Bitboard enemy, Bitboard friends)
 Bitboard Bishop::getMoves3(CKey field, Bitboard enemy, Bitboard friends)
 {
 	Bitboard free_moves = getFreeMoves3(field);
-	return cutRangeMoves(free_moves, enemy, friends, &Bishop::getFreeMoves7, &Bishop::firstBlockerUp);
+	return cutRangeMoves(free_moves, enemy, friends, &Bishop::getFreeMoves7, &Bishop::firstBlockerDown);
 }
 Bitboard Bishop::getMoves7(CKey field, Bitboard enemy, Bitboard friends)
 {
-	Bitboard free_moves = getFreeMoves3(field);
-	return cutRangeMoves(free_moves, enemy, friends, &Bishop::getFreeMoves3, &Bishop::firstBlockerDown);
+	Bitboard free_moves = getFreeMoves7(field);
+	return cutRangeMoves(free_moves, enemy, friends, &Bishop::getFreeMoves3, &Bishop::firstBlockerUp);
 }
 Bitboard Bishop::getMoves9(CKey field, Bitboard enemy, Bitboard friends)
 {
