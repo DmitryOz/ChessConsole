@@ -1,19 +1,14 @@
 #pragma once
 
-#include <string>
+#include "GlobalDefinitions.h"
 
-class Move
+struct Move
 {
-	public:
+	ChessField _from;
+	ChessField _to;
 
-		enum MovedFigure		{ Pawn, Knight, Bishop, Rook, Queen, King, };
-		enum MoveActionType		{ Simple, Take,	};
-		enum MoveResultType		{ Simple, Check, DoubleCheck, Checkmate, Stealmate };
-		enum MoveSpecialType	{ UsualMove, LongCastling, ShortCastling, Passant, BecomeQueen, BecomeRock, BecomeBishop, BecomeKnight,	};	
+	Move() {}
 
-	private:
-
-		short			_estimation;
-		unsigned char	_move_coordinates;
-
+	Move(CKey from, CKey to)
+		:_from((ChessField)from), _to((ChessField)to) {}
 };

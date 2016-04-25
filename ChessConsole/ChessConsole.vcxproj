@@ -146,21 +146,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bishop.cpp" />
-    <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="BishopCalculator.cpp" />
+    <ClCompile Include="MoveCalculator.cpp" />
+    <ClCompile Include="KnightCalculator.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PositionData.cpp" />
-    <ClCompile Include="Queen.cpp" />
-    <ClCompile Include="Rook.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="QueenCalculator.cpp" />
+    <ClCompile Include="RookCalculator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bishop.h" />
-    <ClInclude Include="Figure.h" />
+    <ClInclude Include="BishopCalculator.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="MoveCalculator.h" />
+    <ClInclude Include="KnightCalculator.h" />
+    <ClInclude Include="MoveConverter.h" />
+    <ClInclude Include="MoveInfo.h" />
     <ClInclude Include="MoveTree.h" />
     <ClInclude Include="Node.h" />
-    <ClInclude Include="Queen.h" />
-    <ClInclude Include="Rook.h" />
+    <ClInclude Include="QueenCalculator.h" />
+    <ClInclude Include="RookCalculator.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="PositionData.h" />
     <ClInclude Include="GlobalDefinitions.h" />

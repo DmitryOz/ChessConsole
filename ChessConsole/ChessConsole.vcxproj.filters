@@ -16,41 +16,44 @@
     <Filter Include="Header Files\Position">
       <UniqueIdentifier>{34ce4f4e-7dc8-4223-9b82-0760d728c211}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Position\Figure">
-      <UniqueIdentifier>{6080e345-8795-4e56-9e0a-cad71698d4c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Figures">
-      <UniqueIdentifier>{9a7d4833-2f26-4f10-b4b1-8e7ae0151b5f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\TestGui">
       <UniqueIdentifier>{de9c599b-2296-48a9-9bbd-3b9112d290f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Position">
+      <UniqueIdentifier>{0dfdb88c-6e38-409e-ab1a-0a7c4c68d986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MoveCalculators">
+      <UniqueIdentifier>{6080e345-8795-4e56-9e0a-cad71698d4c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MoveCalculators">
+      <UniqueIdentifier>{9a7d4833-2f26-4f10-b4b1-8e7ae0151b5f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PositionData.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="BishopCalculator.cpp">
+      <Filter>Source Files\MoveCalculators</Filter>
     </ClCompile>
-    <ClCompile Include="Rook.cpp">
-      <Filter>Resource Files\Figures</Filter>
+    <ClCompile Include="KnightCalculator.cpp">
+      <Filter>Source Files\MoveCalculators</Filter>
     </ClCompile>
-    <ClCompile Include="Figure.cpp">
-      <Filter>Resource Files\Figures</Filter>
+    <ClCompile Include="QueenCalculator.cpp">
+      <Filter>Source Files\MoveCalculators</Filter>
     </ClCompile>
-    <ClCompile Include="Bishop.cpp">
-      <Filter>Resource Files\Figures</Filter>
+    <ClCompile Include="RookCalculator.cpp">
+      <Filter>Source Files\MoveCalculators</Filter>
     </ClCompile>
-    <ClCompile Include="Queen.cpp">
-      <Filter>Resource Files\Figures</Filter>
+    <ClCompile Include="MoveCalculator.cpp">
+      <Filter>Source Files\MoveCalculators</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\Position</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MoveTree.h">
@@ -62,23 +65,35 @@
     <ClInclude Include="PositionData.h">
       <Filter>Header Files\Position</Filter>
     </ClInclude>
-    <ClInclude Include="Rook.h">
-      <Filter>Header Files\Position\Figure</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalDefinitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BitboardViewer.h">
       <Filter>Header Files\TestGui</Filter>
     </ClInclude>
-    <ClInclude Include="Bishop.h">
-      <Filter>Header Files\Position\Figure</Filter>
+    <ClInclude Include="BishopCalculator.h">
+      <Filter>Header Files\MoveCalculators</Filter>
     </ClInclude>
-    <ClInclude Include="Queen.h">
-      <Filter>Header Files\Position\Figure</Filter>
+    <ClInclude Include="KnightCalculator.h">
+      <Filter>Header Files\MoveCalculators</Filter>
     </ClInclude>
-    <ClInclude Include="Figure.h">
-      <Filter>Header Files\Position\Figure</Filter>
+    <ClInclude Include="QueenCalculator.h">
+      <Filter>Header Files\MoveCalculators</Filter>
+    </ClInclude>
+    <ClInclude Include="RookCalculator.h">
+      <Filter>Header Files\MoveCalculators</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveInfo.h">
+      <Filter>Header Files\MoveCalculators</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveCalculator.h">
+      <Filter>Header Files\MoveCalculators</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveConverter.h">
+      <Filter>Header Files\MoveCalculators</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Header Files\Position</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
