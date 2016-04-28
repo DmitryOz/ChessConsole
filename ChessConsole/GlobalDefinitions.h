@@ -17,5 +17,5 @@ enum ChessField : CKey {
 	H1, H2, H3, H4, H5, H6, H7, H8,	
 };
 
-enum Color { White, Black };
+enum Color : bool { White, Black };
 enum FiguresType { Pawn, Knight, Bishop, Rook, Queen, King };

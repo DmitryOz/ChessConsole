@@ -37,14 +37,13 @@ void KnightCalculator::generateMoves()
 		}
 	}
 }
-Bitboard KnightCalculator::getFreeMoves(CKey field)
+inline Bitboard KnightCalculator::getFreeMoves(CKey field)
 {
 	return _knight_moves[field];
 }
-Bitboard KnightCalculator::getMoves(CKey field, Bitboard friends)
+inline Bitboard KnightCalculator::getMoves(CKey field, Bitboard enemy, register Bitboard friends)
 {
-	Bitboard moves = getFreeMoves(field);
-	Bitboard blockers = moves & friends;
-	moves ^= blockers;
+	register Bitboard moves = getFreeMoves(field);
+	moves ^= (moves & friends);
 	return moves;
 }

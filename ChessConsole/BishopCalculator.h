@@ -2,7 +2,7 @@
 
 #include "MoveCalculator.h"
 
-class BishopCalculator : public MoveCalculator
+class BishopCalculator : virtual public MoveCalculator
 {
 	private:
 

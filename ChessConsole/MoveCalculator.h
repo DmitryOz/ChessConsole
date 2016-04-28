@@ -8,6 +8,11 @@ class MoveCalculator
 
 		static const CKey MAX_FIELDS = 64;
 
-		CKey	 firstBlockerDown(Bitboard x);							
-		CKey	 firstBlockerUp(Bitboard x);
+		virtual CKey firstBlockerDown(Bitboard x);							
+		virtual CKey firstBlockerUp(Bitboard x);
+
+	public:
+
+		virtual Bitboard getMoves(CKey field, Bitboard enemy, Bitboard friends) = 0;
+		virtual Bitboard getFreeMoves(CKey field) = 0;
 };

@@ -71,34 +71,30 @@ Bitboard BishopCalculator::cutRangeMoves(Bitboard moves, Bitboard enemy, Bitboar
 
 	return result;
 }
-Bitboard BishopCalculator::getMoves1(CKey field, Bitboard enemy, Bitboard friends)
+inline Bitboard BishopCalculator::getMoves1(CKey field, Bitboard enemy, Bitboard friends)
 {
-	Bitboard free_moves = getFreeMoves1(field);
-	return cutRangeMoves(free_moves, enemy, friends, &BishopCalculator::getFreeMoves9, &BishopCalculator::firstBlockerDown);
+	return cutRangeMoves(getFreeMoves1(field), enemy, friends, &BishopCalculator::getFreeMoves9, &BishopCalculator::firstBlockerDown);
 }
-Bitboard BishopCalculator::getMoves3(CKey field, Bitboard enemy, Bitboard friends)
+inline Bitboard BishopCalculator::getMoves3(CKey field, Bitboard enemy, Bitboard friends)
 {
-	Bitboard free_moves = getFreeMoves3(field);
-	return cutRangeMoves(free_moves, enemy, friends, &BishopCalculator::getFreeMoves7, &BishopCalculator::firstBlockerDown);
+	return cutRangeMoves(getFreeMoves3(field), enemy, friends, &BishopCalculator::getFreeMoves7, &BishopCalculator::firstBlockerDown);
 }
-Bitboard BishopCalculator::getMoves7(CKey field, Bitboard enemy, Bitboard friends)
+inline Bitboard BishopCalculator::getMoves7(CKey field, Bitboard enemy, Bitboard friends)
 {
-	Bitboard free_moves = getFreeMoves7(field);
-	return cutRangeMoves(free_moves, enemy, friends, &BishopCalculator::getFreeMoves3, &BishopCalculator::firstBlockerUp);
+	return cutRangeMoves(getFreeMoves7(field), enemy, friends, &BishopCalculator::getFreeMoves3, &BishopCalculator::firstBlockerUp);
 }
-Bitboard BishopCalculator::getMoves9(CKey field, Bitboard enemy, Bitboard friends)
+inline Bitboard BishopCalculator::getMoves9(CKey field, Bitboard enemy, Bitboard friends)
 {
-	Bitboard free_moves = getFreeMoves9(field);
-	return cutRangeMoves(free_moves, enemy, friends, &BishopCalculator::getFreeMoves1, &BishopCalculator::firstBlockerUp);
+	return cutRangeMoves(getFreeMoves9(field), enemy, friends, &BishopCalculator::getFreeMoves1, &BishopCalculator::firstBlockerUp);
 }
-Bitboard BishopCalculator::getFreeMoves(CKey field)
+inline Bitboard BishopCalculator::getFreeMoves(CKey field)
 {
 	return (getFreeMoves1(field) |
 			getFreeMoves3(field) |
 			getFreeMoves7(field) |
 			getFreeMoves9(field));
 }
-Bitboard BishopCalculator::getMoves(CKey field, Bitboard enemy, Bitboard friends)
+inline Bitboard BishopCalculator::getMoves(CKey field, Bitboard enemy, Bitboard friends)
 {
 	return (getMoves1(field, enemy, friends) |
 			getMoves3(field, enemy, friends) |

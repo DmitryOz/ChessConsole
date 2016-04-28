@@ -12,7 +12,7 @@ class KnightCalculator : public MoveCalculator
 
 	public:
 
-		Bitboard getMoves(CKey field, Bitboard friends);
+		Bitboard getMoves(CKey field, Bitboard enemy, Bitboard friends);
 		Bitboard getFreeMoves(CKey field);
 		KnightCalculator();
 };

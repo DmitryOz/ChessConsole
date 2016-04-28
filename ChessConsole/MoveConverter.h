@@ -24,10 +24,8 @@ class MoveConverter
 		{
 			return ((v << 3) | h);
 		}
-
-		static std::vector<ChessField> divideToCKeys(Bitboard moves)
+		inline static void divideToChessFields(Bitboard moves,std::vector<ChessField> & OUT_keys)
 		{
-			std::vector<ChessField> result;
 			while (moves)
 			{
 				const Bitboard t = 1;
@@ -40,10 +38,7 @@ class MoveConverter
 				if (moves >= t << (1 + bit_number))		bit_number += 1;
 
 				moves ^= convertToBitboard(bit_number);
-				result.push_back((ChessField)bit_number);
-			}	
-
-			return result;
-		}	
-	
+				OUT_keys.push_back((ChessField)bit_number);
+			}			
+		}		
 };

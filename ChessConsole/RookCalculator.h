@@ -1,7 +1,7 @@
 #pragma once
 #include "MoveCalculator.h"
 
-class RookCalculator : public MoveCalculator
+class RookCalculator : virtual public MoveCalculator
 {
 	private:		
 

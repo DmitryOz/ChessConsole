@@ -30,10 +30,17 @@ class Position
 		BishopCalculator _bishop_calc;
 		QueenCalculator	_queen_calc;
 
+		std::vector<ChessField> _from_vec;
+		std::vector<ChessField> _to_vec;
+		std::vector<Move> _moves_vec;
+
+		void addMovesToVec(Bitboard IN_figures, MoveCalculator * calc, Bitboard enemy, Bitboard friends);			
+		
 	public:
 
-		std::vector<Move> getMoveList();
+		const std::vector<Move> & getMovesVec();
 		void addFigure(Color color, FiguresType type, CKey key);
+		void changeColor();
 
 		Position()
 			:_turn(Color::White) {}
